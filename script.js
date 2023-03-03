@@ -197,146 +197,146 @@ function animate() {
                     }
                 }
             })) {
-//                 moving = false
-//                 break
-//             }
-//         }
-//         if(moving)
-//         moveables.forEach((moveable) => {
-//             moveable.position.x += 3
-//         })
-//     } else if(keys.s.pressed && lastKey === 's') {
-//         player.moving = true
-//         player.image = player.sprites.down
-//         for(let i = 0; i < boundaries.length; i++) {
-//             const boundary = boundaries[i]
-//             if(rectangularCollision ({
-//                 rectangle1: player, 
-//                 rectangle2: {...boundary, 
-//                     position: {
-//                         x: boundary.position.x,
-//                         y: boundary.position.y - 3
-//                     }
-//                 }
-//             })) {
-//                 moving = false
-//                 break
-//             }
-//         }
-//         if(moving)
-//         moveables.forEach((moveable) => {
-//             moveable.position.y -= 3
-//         })
-//     } else if(keys.d.pressed && lastKey === 'd') {
-//         player.moving = true
-//         player.image = player.sprites.right
-//         for(let i = 0; i < boundaries.length; i++) {
-//             const boundary = boundaries[i]
-//             if(rectangularCollision ({
-//                 rectangle1: player, 
-//                 rectangle2: {...boundary, 
-//                     position: {
-//                         x: boundary.position.x - 3,
-//                         y: boundary.position.y
-//                     }
-//                 }
-//             })) {
-//                 moving = false
-//                 break
-//             }
-//         }
-//         if(moving)
-//         moveables.forEach((moveable) => {
-//             moveable.position.x -= 3
-//         })
-//     }
+                moving = false
+                break
+            }
+        }
+        if(moving)
+        moveables.forEach((moveable) => {
+            moveable.position.x += 3
+        })
+    } else if(keys.s.pressed && lastKey === 's') {
+        player.moving = true
+        player.image = player.sprites.down
+        for(let i = 0; i < boundaries.length; i++) {
+            const boundary = boundaries[i]
+            if(rectangularCollision ({
+                rectangle1: player, 
+                rectangle2: {...boundary, 
+                    position: {
+                        x: boundary.position.x,
+                        y: boundary.position.y - 3
+                    }
+                }
+            })) {
+                moving = false
+                break
+            }
+        }
+        if(moving)
+        moveables.forEach((moveable) => {
+            moveable.position.y -= 3
+        })
+    } else if(keys.d.pressed && lastKey === 'd') {
+        player.moving = true
+        player.image = player.sprites.right
+        for(let i = 0; i < boundaries.length; i++) {
+            const boundary = boundaries[i]
+            if(rectangularCollision ({
+                rectangle1: player, 
+                rectangle2: {...boundary, 
+                    position: {
+                        x: boundary.position.x - 3,
+                        y: boundary.position.y
+                    }
+                }
+            })) {
+                moving = false
+                break
+            }
+        }
+        if(moving)
+        moveables.forEach((moveable) => {
+            moveable.position.x -= 3
+        })
+    }
   
-// }
-// animate();
+}
+animate();
 
-// let lastKey = ''
-// //Event Listener that listens for the W,A,S,D keys to be pressed which will control the charcters movement direction.
-// //We called our 'Keys' Object and now when the specifed key is pressed it is switched from default False to True.
-// window.addEventListener('keydown', (e) => {
-//    switch (e.key) {
-//     case 'w':
-//         keys.w.pressed = true
-//         lastKey = 'w'
-//     break
-//     case 'a':
-//         keys.a.pressed = true
-//         lastKey = 'a'
-//     break 
-//     case 's':
-//         keys.s.pressed = true
-//         lastKey = 's'
-//     break
-//     case 'd':
-//         keys.d.pressed = true
-//         lastKey = 'd'
-//     break   
-//    }
-// })
-// //Here we called the same Event Listener for our keys but this time we listen for a Key and we set our key pressed back to false so essentially this creates a toggling effect for our keys when the user is moving the character around.
-// window.addEventListener('keyup', (e) => {
-//     switch (e.key) {
-//      case 'w':
-//          keys.w.pressed = false
-//      break
-//      case 'a':
-//          keys.a.pressed = false
-//      break 
-//      case 's':
-//          keys.s.pressed = false
-//      break
-//      case 'd':
-//          keys.d.pressed = false
-//      break   
-//     }
-//  })
+let lastKey = ''
+//Event Listener that listens for the W,A,S,D keys to be pressed which will control the charcters movement direction.
+//We called our 'Keys' Object and now when the specifed key is pressed it is switched from default False to True.
+window.addEventListener('keydown', (e) => {
+   switch (e.key) {
+    case 'w':
+        keys.w.pressed = true
+        lastKey = 'w'
+    break
+    case 'a':
+        keys.a.pressed = true
+        lastKey = 'a'
+    break 
+    case 's':
+        keys.s.pressed = true
+        lastKey = 's'
+    break
+    case 'd':
+        keys.d.pressed = true
+        lastKey = 'd'
+    break   
+   }
+})
+//Here we called the same Event Listener for our keys but this time we listen for a Key and we set our key pressed back to false so essentially this creates a toggling effect for our keys when the user is moving the character around.
+window.addEventListener('keyup', (e) => {
+    switch (e.key) {
+     case 'w':
+         keys.w.pressed = false
+     break
+     case 'a':
+         keys.a.pressed = false
+     break 
+     case 's':
+         keys.s.pressed = false
+     break
+     case 'd':
+         keys.d.pressed = false
+     break   
+    }
+ })
 
-// //Plays music
-// let clicked = false
-// addEventListener('click', () => {
-//     if(!clicked) {
-//         audio.Map.play()
-//         clicked = true
-//     } else {
-//         audio.Map.pause()
-//     }
-// })
+//Plays music
+let clicked = false
+addEventListener('click', () => {
+    if(!clicked) {
+        audio.Map.play()
+        clicked = true
+    } else {
+        audio.Map.pause()
+    }
+})
 
-// //Hide Start Button when clicked (creates fadeout animation)
-// function fadeOutEffect() {
-//     let fadeTarget = document.querySelector('.startBtn');
-//     let fadeEffect = setInterval(function () {
-//         if (!fadeTarget.style.opacity) {
-//             fadeTarget.style.opacity = 1;
-//         }
-//         if (fadeTarget.style.opacity > 0) {
-//             fadeTarget.style.opacity -= 0.1;
-//         } else {
-//             clearInterval(fadeEffect);
-//         }
-//     }, 50);
-// }
+//Hide Start Button when clicked (creates fadeout animation)
+function fadeOutEffect() {
+    let fadeTarget = document.querySelector('.startBtn');
+    let fadeEffect = setInterval(function () {
+        if (!fadeTarget.style.opacity) {
+            fadeTarget.style.opacity = 1;
+        }
+        if (fadeTarget.style.opacity > 0) {
+            fadeTarget.style.opacity -= 0.1;
+        } else {
+            clearInterval(fadeEffect);
+        }
+    }, 50);
+}
 
-// document.querySelector('.startBtn').addEventListener('click', fadeOutEffect);
+document.querySelector('.startBtn').addEventListener('click', fadeOutEffect);
 
 
-// //Mute Button
-// let on = document.querySelector('.on')
-// let off = document.querySelector('.off')
-// let soundBox = document.querySelector('.soundBox')
+//Mute Button
+let on = document.querySelector('.on')
+let off = document.querySelector('.off')
+let soundBox = document.querySelector('.soundBox')
 
-// let click = false
+let click = false
 
-// off.classList.add('hidden');
+off.classList.add('hidden');
 
-// function mute () {
-//     if(!click) {
-//         off.classList.remove('hidden');
-//         on.classList.add('hidden');
-//     }
-// }
-// on.addEventListener('click', mute);
+function mute () {
+    if(!click) {
+        off.classList.remove('hidden');
+        on.classList.add('hidden');
+    }
+}
+on.addEventListener('click', mute);
