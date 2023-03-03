@@ -136,207 +136,207 @@ function rectangularCollision ({rectangle1, rectangle2}) {
 }
 
 //Animation Loop 
-// function animate() {
-//     window.requestAnimationFrame(animate);
+function animate() {
+    window.requestAnimationFrame(animate);
 
-//     //Here we called our background Variable which contains 'position' and 'image' then called our Draw Method to position our Map at its specfied starting point.
-//     background.draw()
+    //Here we called our background Variable which contains 'position' and 'image' then called our Draw Method to position our Map at its specfied starting point.
+    background.draw()
 
-//     //Adds in Collision Boundaries into map
-//     boundaries.forEach(boundary => {
-//         boundary.draw()
+    //Adds in Collision Boundaries into map
+    boundaries.forEach(boundary => {
+        boundary.draw()
       
-//     })
+    })
 
-//     //Renders out Player
-//     player.draw()
+    //Renders out Player
+    player.draw()
 
-//     //Renders out Foreground
-//     foreground.draw()
+    //Renders out Foreground
+    foreground.draw()
 
-//     let moving = true
-//     player.moving = false
-//     //Here we created an IF Statement that will listen for a specific key being pressed and this will be how the "player is moved around" by calling the x or y position coordinates we specified in our 'background' Variable' and then adding or subtracting a number from those coordinates so as the user holds the key that number is gradually subtracted from or added to the specified x or y coordinate moving the background image giving the illusion our player is moving about the map.
-//     //Adding in the 'lastKey' makes it so if the user is holding down multiple keys whatever the last key pressed was is what direction the character will move (see 'lastKey' Variable and 'keydown' listener for setup).
-//     if(keys.w.pressed && lastKey === 'w') {
-//         player.moving = true
-//         player.image = player.sprites.up
-//         //This all will stop our charcter when it runs into one of the boundaries
-//         for(let i = 0; i < boundaries.length; i++) {
-//             const boundary = boundaries[i]
-//             //IF Statement that detects when our character is colliding with one of our boundaries on all four sides of our character
-//             if(rectangularCollision ({
-//                 rectangle1: player, 
-//                 rectangle2: {...boundary, 
-//                     position: {
-//                         x: boundary.position.x,
-//                         y: boundary.position.y + 3
-//                     }
-//                 }
-//             })) {
-//                 moving = false
-//                 break
-//             }
-//         }
-//         if(moving)
-//         //Moves charcter 3 pixels when pressed
-//         moveables.forEach((moveable) => {
-//             moveable.position.y += 3
-//         })
-//     } else if(keys.a.pressed && lastKey === 'a') {
-//         player.moving = true
-//         player.image = player.sprites.left
-//         for(let i = 0; i < boundaries.length; i++) {
-//             const boundary = boundaries[i]
-//             if(rectangularCollision ({
-//                 rectangle1: player, 
-//                 rectangle2: {...boundary, 
-//                     position: {
-//                         x: boundary.position.x + 3,
-//                         y: boundary.position.y
-//                     }
-//                 }
-//             })) {
-//                 moving = false
-//                 break
-//             }
-//         }
-//         if(moving)
-//         moveables.forEach((moveable) => {
-//             moveable.position.x += 3
-//         })
-//     } else if(keys.s.pressed && lastKey === 's') {
-//         player.moving = true
-//         player.image = player.sprites.down
-//         for(let i = 0; i < boundaries.length; i++) {
-//             const boundary = boundaries[i]
-//             if(rectangularCollision ({
-//                 rectangle1: player, 
-//                 rectangle2: {...boundary, 
-//                     position: {
-//                         x: boundary.position.x,
-//                         y: boundary.position.y - 3
-//                     }
-//                 }
-//             })) {
-//                 moving = false
-//                 break
-//             }
-//         }
-//         if(moving)
-//         moveables.forEach((moveable) => {
-//             moveable.position.y -= 3
-//         })
-//     } else if(keys.d.pressed && lastKey === 'd') {
-//         player.moving = true
-//         player.image = player.sprites.right
-//         for(let i = 0; i < boundaries.length; i++) {
-//             const boundary = boundaries[i]
-//             if(rectangularCollision ({
-//                 rectangle1: player, 
-//                 rectangle2: {...boundary, 
-//                     position: {
-//                         x: boundary.position.x - 3,
-//                         y: boundary.position.y
-//                     }
-//                 }
-//             })) {
-//                 moving = false
-//                 break
-//             }
-//         }
-//         if(moving)
-//         moveables.forEach((moveable) => {
-//             moveable.position.x -= 3
-//         })
-//     }
+    let moving = true
+    player.moving = false
+    //Here we created an IF Statement that will listen for a specific key being pressed and this will be how the "player is moved around" by calling the x or y position coordinates we specified in our 'background' Variable' and then adding or subtracting a number from those coordinates so as the user holds the key that number is gradually subtracted from or added to the specified x or y coordinate moving the background image giving the illusion our player is moving about the map.
+    //Adding in the 'lastKey' makes it so if the user is holding down multiple keys whatever the last key pressed was is what direction the character will move (see 'lastKey' Variable and 'keydown' listener for setup).
+    if(keys.w.pressed && lastKey === 'w') {
+        player.moving = true
+        player.image = player.sprites.up
+        //This all will stop our charcter when it runs into one of the boundaries
+        for(let i = 0; i < boundaries.length; i++) {
+            const boundary = boundaries[i]
+            //IF Statement that detects when our character is colliding with one of our boundaries on all four sides of our character
+            if(rectangularCollision ({
+                rectangle1: player, 
+                rectangle2: {...boundary, 
+                    position: {
+                        x: boundary.position.x,
+                        y: boundary.position.y + 3
+                    }
+                }
+            })) {
+                moving = false
+                break
+            }
+        }
+        if(moving)
+        //Moves charcter 3 pixels when pressed
+        moveables.forEach((moveable) => {
+            moveable.position.y += 3
+        })
+    } else if(keys.a.pressed && lastKey === 'a') {
+        player.moving = true
+        player.image = player.sprites.left
+        for(let i = 0; i < boundaries.length; i++) {
+            const boundary = boundaries[i]
+            if(rectangularCollision ({
+                rectangle1: player, 
+                rectangle2: {...boundary, 
+                    position: {
+                        x: boundary.position.x + 3,
+                        y: boundary.position.y
+                    }
+                }
+            })) {
+                moving = false
+                break
+            }
+        }
+        if(moving)
+        moveables.forEach((moveable) => {
+            moveable.position.x += 3
+        })
+    } else if(keys.s.pressed && lastKey === 's') {
+        player.moving = true
+        player.image = player.sprites.down
+        for(let i = 0; i < boundaries.length; i++) {
+            const boundary = boundaries[i]
+            if(rectangularCollision ({
+                rectangle1: player, 
+                rectangle2: {...boundary, 
+                    position: {
+                        x: boundary.position.x,
+                        y: boundary.position.y - 3
+                    }
+                }
+            })) {
+                moving = false
+                break
+            }
+        }
+        if(moving)
+        moveables.forEach((moveable) => {
+            moveable.position.y -= 3
+        })
+    } else if(keys.d.pressed && lastKey === 'd') {
+        player.moving = true
+        player.image = player.sprites.right
+        for(let i = 0; i < boundaries.length; i++) {
+            const boundary = boundaries[i]
+            if(rectangularCollision ({
+                rectangle1: player, 
+                rectangle2: {...boundary, 
+                    position: {
+                        x: boundary.position.x - 3,
+                        y: boundary.position.y
+                    }
+                }
+            })) {
+                moving = false
+                break
+            }
+        }
+        if(moving)
+        moveables.forEach((moveable) => {
+            moveable.position.x -= 3
+        })
+    }
   
-// }
-// animate();
+}
+animate();
 
-// let lastKey = ''
-// //Event Listener that listens for the W,A,S,D keys to be pressed which will control the charcters movement direction.
-// //We called our 'Keys' Object and now when the specifed key is pressed it is switched from default False to True.
-// window.addEventListener('keydown', (e) => {
-//    switch (e.key) {
-//     case 'w':
-//         keys.w.pressed = true
-//         lastKey = 'w'
-//     break
-//     case 'a':
-//         keys.a.pressed = true
-//         lastKey = 'a'
-//     break 
-//     case 's':
-//         keys.s.pressed = true
-//         lastKey = 's'
-//     break
-//     case 'd':
-//         keys.d.pressed = true
-//         lastKey = 'd'
-//     break   
-//    }
-// })
-// //Here we called the same Event Listener for our keys but this time we listen for a Key and we set our key pressed back to false so essentially this creates a toggling effect for our keys when the user is moving the character around.
-// window.addEventListener('keyup', (e) => {
-//     switch (e.key) {
-//      case 'w':
-//          keys.w.pressed = false
-//      break
-//      case 'a':
-//          keys.a.pressed = false
-//      break 
-//      case 's':
-//          keys.s.pressed = false
-//      break
-//      case 'd':
-//          keys.d.pressed = false
-//      break   
-//     }
-//  })
+let lastKey = ''
+//Event Listener that listens for the W,A,S,D keys to be pressed which will control the charcters movement direction.
+//We called our 'Keys' Object and now when the specifed key is pressed it is switched from default False to True.
+window.addEventListener('keydown', (e) => {
+   switch (e.key) {
+    case 'w':
+        keys.w.pressed = true
+        lastKey = 'w'
+    break
+    case 'a':
+        keys.a.pressed = true
+        lastKey = 'a'
+    break 
+    case 's':
+        keys.s.pressed = true
+        lastKey = 's'
+    break
+    case 'd':
+        keys.d.pressed = true
+        lastKey = 'd'
+    break   
+   }
+})
+//Here we called the same Event Listener for our keys but this time we listen for a Key and we set our key pressed back to false so essentially this creates a toggling effect for our keys when the user is moving the character around.
+window.addEventListener('keyup', (e) => {
+    switch (e.key) {
+     case 'w':
+         keys.w.pressed = false
+     break
+     case 'a':
+         keys.a.pressed = false
+     break 
+     case 's':
+         keys.s.pressed = false
+     break
+     case 'd':
+         keys.d.pressed = false
+     break   
+    }
+ })
 
-// //Plays music
-// let clicked = false
-// addEventListener('click', () => {
-//     if(!clicked) {
-//         audio.Map.play()
-//         clicked = true
-//     } else {
-//         audio.Map.pause()
-//     }
-// })
+//Plays music
+let clicked = false
+addEventListener('click', () => {
+    if(!clicked) {
+        audio.Map.play()
+        clicked = true
+    } else {
+        audio.Map.pause()
+    }
+})
 
-// //Hide Start Button when clicked (creates fadeout animation)
-// function fadeOutEffect() {
-//     let fadeTarget = document.querySelector('.startBtn');
-//     let fadeEffect = setInterval(function () {
-//         if (!fadeTarget.style.opacity) {
-//             fadeTarget.style.opacity = 1;
-//         }
-//         if (fadeTarget.style.opacity > 0) {
-//             fadeTarget.style.opacity -= 0.1;
-//         } else {
-//             clearInterval(fadeEffect);
-//         }
-//     }, 50);
-// }
+//Hide Start Button when clicked (creates fadeout animation)
+function fadeOutEffect() {
+    let fadeTarget = document.querySelector('.startBtn');
+    let fadeEffect = setInterval(function () {
+        if (!fadeTarget.style.opacity) {
+            fadeTarget.style.opacity = 1;
+        }
+        if (fadeTarget.style.opacity > 0) {
+            fadeTarget.style.opacity -= 0.1;
+        } else {
+            clearInterval(fadeEffect);
+        }
+    }, 50);
+}
 
-// document.querySelector('.startBtn').addEventListener('click', fadeOutEffect);
+document.querySelector('.startBtn').addEventListener('click', fadeOutEffect);
 
 
-// //Mute Button
-// let on = document.querySelector('.on')
-// let off = document.querySelector('.off')
-// let soundBox = document.querySelector('.soundBox')
+//Mute Button
+let on = document.querySelector('.on')
+let off = document.querySelector('.off')
+let soundBox = document.querySelector('.soundBox')
 
-// let click = false
+let click = false
 
-// off.classList.add('hidden');
+off.classList.add('hidden');
 
-// function mute () {
-//     if(!click) {
-//         off.classList.remove('hidden');
-//         on.classList.add('hidden');
-//     }
-// }
-// on.addEventListener('click', mute);
+function mute () {
+    if(!click) {
+        off.classList.remove('hidden');
+        on.classList.add('hidden');
+    }
+}
+on.addEventListener('click', mute);
