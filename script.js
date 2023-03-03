@@ -295,16 +295,16 @@ window.addEventListener('keyup', (e) => {
     }
  })
 
-//Plays music
-let clicked = false
-addEventListener('click', () => {
-    if(!clicked) {
-        audio.Map.play()
-        clicked = true
-    } else {
-        audio.Map.pause()
-    }
-})
+// //Plays music
+// let clicked = false
+// addEventListener('click', () => {
+//     if(!clicked) {
+//         audio.Map.play()
+//         clicked = true
+//     } else {
+//         audio.Map.pause()
+//     }
+// })
 
 //Hide Start Button when clicked (creates fadeout animation)
 function fadeOutEffect() {
