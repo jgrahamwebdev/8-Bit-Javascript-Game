@@ -197,62 +197,62 @@ function animate() {
                     }
                 }
             })) {
-                moving = false
-                break
-            }
-        }
-        if(moving)
-        moveables.forEach((moveable) => {
-            moveable.position.x += 3
-        })
-    } else if(keys.s.pressed && lastKey === 's') {
-        player.moving = true
-        player.image = player.sprites.down
-        for(let i = 0; i < boundaries.length; i++) {
-            const boundary = boundaries[i]
-            if(rectangularCollision ({
-                rectangle1: player, 
-                rectangle2: {...boundary, 
-                    position: {
-                        x: boundary.position.x,
-                        y: boundary.position.y - 3
-                    }
-                }
-            })) {
-                moving = false
-                break
-            }
-        }
-        if(moving)
-        moveables.forEach((moveable) => {
-            moveable.position.y -= 3
-        })
-    } else if(keys.d.pressed && lastKey === 'd') {
-        player.moving = true
-        player.image = player.sprites.right
-        for(let i = 0; i < boundaries.length; i++) {
-            const boundary = boundaries[i]
-            if(rectangularCollision ({
-                rectangle1: player, 
-                rectangle2: {...boundary, 
-                    position: {
-                        x: boundary.position.x - 3,
-                        y: boundary.position.y
-                    }
-                }
-            })) {
-                moving = false
-                break
-            }
-        }
-        if(moving)
-        moveables.forEach((moveable) => {
-            moveable.position.x -= 3
-        })
-    }
+//                 moving = false
+//                 break
+//             }
+//         }
+//         if(moving)
+//         moveables.forEach((moveable) => {
+//             moveable.position.x += 3
+//         })
+//     } else if(keys.s.pressed && lastKey === 's') {
+//         player.moving = true
+//         player.image = player.sprites.down
+//         for(let i = 0; i < boundaries.length; i++) {
+//             const boundary = boundaries[i]
+//             if(rectangularCollision ({
+//                 rectangle1: player, 
+//                 rectangle2: {...boundary, 
+//                     position: {
+//                         x: boundary.position.x,
+//                         y: boundary.position.y - 3
+//                     }
+//                 }
+//             })) {
+//                 moving = false
+//                 break
+//             }
+//         }
+//         if(moving)
+//         moveables.forEach((moveable) => {
+//             moveable.position.y -= 3
+//         })
+//     } else if(keys.d.pressed && lastKey === 'd') {
+//         player.moving = true
+//         player.image = player.sprites.right
+//         for(let i = 0; i < boundaries.length; i++) {
+//             const boundary = boundaries[i]
+//             if(rectangularCollision ({
+//                 rectangle1: player, 
+//                 rectangle2: {...boundary, 
+//                     position: {
+//                         x: boundary.position.x - 3,
+//                         y: boundary.position.y
+//                     }
+//                 }
+//             })) {
+//                 moving = false
+//                 break
+//             }
+//         }
+//         if(moving)
+//         moveables.forEach((moveable) => {
+//             moveable.position.x -= 3
+//         })
+//     }
   
-}
-animate();
+// }
+// animate();
 
 // let lastKey = ''
 // //Event Listener that listens for the W,A,S,D keys to be pressed which will control the charcters movement direction.
