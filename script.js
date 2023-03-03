@@ -325,18 +325,18 @@ document.querySelector('.startBtn').addEventListener('click', fadeOutEffect);
 
 
 //Mute Button
-let on = document.querySelector('.on')
-let off = document.querySelector('.off')
-let soundBox = document.querySelector('.soundBox')
+// let on = document.querySelector('.on')
+// let off = document.querySelector('.off')
+// let soundBox = document.querySelector('.soundBox')
 
-let click = false
+// let click = false
 
-off.classList.add('hidden');
+// off.classList.add('hidden');
 
-function mute () {
-    if(!click) {
-        off.classList.remove('hidden');
-        on.classList.add('hidden');
-    }
-}
-on.addEventListener('click', mute);
+// function mute () {
+//     if(!click) {
+//         off.classList.remove('hidden');
+//         on.classList.add('hidden');
+//     }
+// }
+// on.addEventListener('click', mute);
